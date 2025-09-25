@@ -14,7 +14,9 @@ RUN pip install --no-cache-dir docling --extra-index-url https://download.pytorc
 ENV HF_HOME=/tmp/
 ENV TORCH_HOME=/tmp/
 
-COPY docs/examples/minimal.py /root/minimal.py
+RUN MKDIR /app
+RUN CHMOD 777 /app
+COPY docs/examples/minimal.py /app/minimal.py
 
 # RUN docling-tools models download
 ENTRYPOINT ["/bin/sh", "-c", "--" , "while true; do sleep 30; done;"]
