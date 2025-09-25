@@ -14,8 +14,8 @@ RUN pip install --no-cache-dir docling --extra-index-url https://download.pytorc
 ENV HF_HOME=/tmp/
 ENV TORCH_HOME=/tmp/
 
-RUN MKDIR /app
-RUN CHMOD 777 /app
+RUN mkdir -p /app
+RUN chmod -R 777 /app
 COPY docs/examples/minimal.py /app/minimal.py
 
 # RUN docling-tools models download
