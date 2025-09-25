@@ -16,8 +16,8 @@ ENV TORCH_HOME=/tmp/
 
 COPY docs/examples/minimal.py /root/minimal.py
 
-RUN docling-tools models download
-
+# RUN docling-tools models download
+ENTRYPOINT ["/bin/sh", "-c", "--" , "while true; do sleep 30; done;"]
 # On container environments, always set a thread budget to avoid undesired thread congestion.
 ENV OMP_NUM_THREADS=4
 
